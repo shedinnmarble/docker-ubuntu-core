@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  ubuntu:
+    container_name: ubuntu
+    image: dewei/ubuntu:master
+    ports:
+      - "4089:4089"
+      - "8089:80"
+    volumes:
+      - /usr/src/project/node_modules/
+    networks:
+      - public
+
+networks:
+  public:
+    driver: bridge
+  private:
+    driver: bridge
